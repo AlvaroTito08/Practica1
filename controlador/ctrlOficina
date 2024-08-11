@@ -1,0 +1,19 @@
+<?php
+include_once "../modelo/modOficina.php";
+//Llenado de los datos del formulario html.
+$ciudad=htmlspecialchars($_POST['ciudad']);
+$pais=htmlspecialchars($_POST['pais']);
+$region=htmlspecialchars($_POST['region']);
+$codigo_postal=htmlspecialchars($_POST['codigo_postal']);
+$telefono=htmlspecialchars($_POST['telefono']);
+$linea_direccion1=htmlspecialchars($_POST['linea_direccion1']);
+$linea_direccion2=htmlspecialchars($_POST['linea_direccion2']);
+//uso de los set del modelo cliente
+$oficina= new $oficina();
+$oficina->setNombre($ciudad);
+$oficina->setApellido1($pais);
+$oficina->setApellido2($region);
+$oficina->setExtension($codigo_postal);
+$oficina->setEmaill($telefono);
+$oficina->setCodigoJefe($linea_direccion1);
+$oficina->setPuesto($linea_direccion2);
