@@ -8,7 +8,7 @@ if ($method == "OPTIONS") {
     die();
 }
 
-class ConexionBase {
+class conexionBase {
     // Definición de atributos
     private $host;
     private $user;

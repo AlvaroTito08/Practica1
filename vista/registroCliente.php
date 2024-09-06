@@ -1,17 +1,16 @@
-<?php include_once "cabecera.php"?>
+<?php include_once "registroCliente.php"?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Cliente</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
         <h2>Registrar Cliente</h2>
-        <form action="../controlador/ctrlCliente.php" method="POST">
+        <form action="../controlador/ctrlCliente.php" method="post">
             <div class="mb-3">
                 <label for="nombre_cliente" class="form-label">Nombre del Cliente</label>
                 <input type="text" class="form-control" id="nombre_cliente" name="nombre_cliente" required>
@@ -67,8 +66,6 @@
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

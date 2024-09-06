@@ -1,6 +1,8 @@
 <?php
 include_once "conexion/conexionBase.php";
-class Cliente {
+
+class Cliente
+{
     private $codigo_cliente;
     private $nombre_cliente;
     private $nombre_contacto;
@@ -17,309 +19,114 @@ class Cliente {
     private $limite_credito;
     private $con;
 
-    public function __construct()
+    function __construct()
     {
-        $this->codigo_cliente=null;
-        $this->nombre_cliente="";
-        $this->nombre_contacto="";
-        $this->apellido_contacto="";
-        $this->telefono="";
-        $this->fax="";
-        $this->linea_direccion1="";
-        $this->linea_direccion2="";
-        $this->ciudad="";
-        $this->region="";
-        $this->pais="";
-        $this->codigo_postal="";
-        $this->codigo_empleado_rep_ventas='null';
-        $this->limite_credito=0.0;
-        $this->con= new ConexionBase();
+        $this->codigo_cliente = null;
+        $this->nombre_cliente = "";
+        $this->nombre_contacto = "";
+        $this->apellido_contacto = "";
+        $this->telefono = "";
+        $this->fax = "";
+        $this->linea_direccion1 = "";
+        $this->linea_direccion2 = "";
+        $this->ciudad = "";
+        $this->region = "";
+        $this->pais = "";
+        $this->codigo_postal = "";
+        $this->codigo_empleado_rep_ventas = null;
+        $this->limite_credito = 0;
+        $this->con = new ConexionBase();
     }
 
-    /**
-     * Get the value of codigo_cliente
-     */
-    public function getCodigoCliente()
-    {
+    public function setCodigo_cliente($v){
+        $this->codigo_cliente=$v;
+    }
+    public function getCodigo_cliente(){
         return $this->codigo_cliente;
     }
-
-    /**
-     * Set the value of codigo_cliente
-     */
-    public function setCodigoCliente($codigo_cliente): self
-    {
-        $this->codigo_cliente = $codigo_cliente;
-
-        return $this;
+    public function setNombre_cliente($v){
+        $this->nombre_cliente=$v;
     }
-
-    /**
-     * Get the value of nombre_cliente
-     */
-    public function getNombreCliente()
-    {
+    public function getNombre_cliente(){
         return $this->nombre_cliente;
     }
-
-    /**
-     * Set the value of nombre_cliente
-     */
-    public function setNombreCliente($nombre_cliente): self
-    {
-        $this->nombre_cliente = $nombre_cliente;
-
-        return $this;
+    public function setNombre_contacto($v){
+        $this->nombre_contacto=$v;
     }
-
-    /**
-     * Get the value of nombre_contacto
-     */
-    public function getNombreContacto()
-    {
+    public function getNombre_contacto(){
         return $this->nombre_contacto;
     }
-
-    /**
-     * Set the value of nombre_contacto
-     */
-    public function setNombreContacto($nombre_contacto): self
-    {
-        $this->nombre_contacto = $nombre_contacto;
-
-        return $this;
+    public function setApellido_contacto($v){
+        $this->apellido_contacto=$v;
     }
-
-    /**
-     * Get the value of apellido_contacto
-     */
-    public function getApellidoContacto()
-    {
+    public function getApellido_contacto(){
         return $this->apellido_contacto;
     }
-
-    /**
-     * Set the value of apellido_contacto
-     */
-    public function setApellidoContacto($apellido_contacto): self
-    {
-        $this->apellido_contacto = $apellido_contacto;
-
-        return $this;
+    public function setTelefono($v){
+        $this->telefono=$v;
     }
-
-    /**
-     * Get the value of telefono
-     */
-    public function getTelefono()
-    {
+    public function getTelefono(){
         return $this->telefono;
     }
-
-    /**
-     * Set the value of telefono
-     */
-    public function setTelefono($telefono): self
-    {
-        $this->telefono = $telefono;
-
-        return $this;
+    public function setFax($v){
+        $this->fax=$v;
     }
-
-    /**
-     * Get the value of fax
-     */
-    public function getFax()
-    {
+    public function getFax(){
         return $this->fax;
     }
-
-    /**
-     * Set the value of fax
-     */
-    public function setFax($fax): self
-    {
-        $this->fax = $fax;
-
-        return $this;
+    public function setLinea_direccion1($v){
+        $this->linea_direccion1=$v;
     }
-
-    /**
-     * Get the value of linea_direccion1
-     */
-    public function getLineaDireccion1()
-    {
+    public function getLinea_direccion1(){
         return $this->linea_direccion1;
     }
-
-    /**
-     * Set the value of linea_direccion1
-     */
-    public function setLineaDireccion1($linea_direccion1): self
-    {
-        $this->linea_direccion1 = $linea_direccion1;
-
-        return $this;
+    public function setLinea_direccion2($v){
+        $this->linea_direccion2=$v;
     }
-
-    /**
-     * Get the value of linea_direccion2
-     */
-    public function getLineaDireccion2()
-    {
+    public function getLinea_direccion2(){
         return $this->linea_direccion2;
     }
-
-    /**
-     * Set the value of linea_direccion2
-     */
-    public function setLineaDireccion2($linea_direccion2): self
-    {
-        $this->linea_direccion2 = $linea_direccion2;
-
-        return $this;
+    public function setCiudad($v){
+        $this->ciudad=$v;
     }
-
-    /**
-     * Get the value of ciudad
-     */
-    public function getCiudad()
-    {
+    public function getCiudad(){
         return $this->ciudad;
     }
-
-    /**
-     * Set the value of ciudad
-     */
-    public function setCiudad($ciudad): self
-    {
-        $this->ciudad = $ciudad;
-
-        return $this;
+    public function setRegion($v){
+        $this->region=$v;
     }
-
-    /**
-     * Get the value of region
-     */
-    public function getRegion()
-    {
+    public function getRegion(){
         return $this->region;
     }
-
-    /**
-     * Set the value of region
-     */
-    public function setRegion($region): self
-    {
-        $this->region = $region;
-
-        return $this;
+    public function setPais($v){
+        $this->pais=$v;
     }
-
-    /**
-     * Get the value of pais
-     */
-    public function getPais()
-    {
+    public function getPais(){
         return $this->pais;
     }
-
-    /**
-     * Set the value of pais
-     */
-    public function setPais($pais): self
-    {
-        $this->pais = $pais;
-
-        return $this;
+    public function setCodigo_postal($v){
+        $this->codigo_postal=$v;
     }
-
-    /**
-     * Get the value of codigo_postal
-     */
-    public function getCodigoPostal()
-    {
+    public function getCodigo_postal(){
         return $this->codigo_postal;
     }
-
-    /**
-     * Set the value of codigo_postal
-     */
-    public function setCodigoPostal($codigo_postal): self
-    {
-        $this->codigo_postal = $codigo_postal;
-
-        return $this;
+    public function setCodigo_empleado_rep_ventas($v){
+        $this->codigo_empleado_rep_ventas=$v;
     }
-
-    /**
-     * Get the value of codigo_empleado_rep_ventas
-     */
-    public function getCodigoEmpleadoRepVentas()
-    {
+    public function getCodigo_empleado_rep_ventas(){
         return $this->codigo_empleado_rep_ventas;
     }
-
-    /**
-     * Set the value of codigo_empleado_rep_ventas
-     */
-    public function setCodigoEmpleadoRepVentas($codigo_empleado_rep_ventas): self
-    {
-        $this->codigo_empleado_rep_ventas = $codigo_empleado_rep_ventas;
-
-        return $this;
+    public function setLimite_credito($v){
+        $this->limite_credito=$v;
     }
-
-    /**
-     * Get the value of limite_credito
-     */
-    public function getLimiteCredito()
-    {
+    public function getLimite_credito(){
         return $this->limite_credito;
-    }
-
-    /**
-     * Set the value of limite_credito
-     */
-    public function setLimiteCredito($limite_credito): self
-    {
-        $this->limite_credito = $limite_credito;
-
-        return $this;
     }
 
     public function registrarCliente(){
         $this->con->createConnection();
-        $sql="insert into cliente (nombre_cliente,
-        nombre_contacto,
-        apellido_contacto,
-        telefono,
-        fax,
-        linea_direccion1,
-        linea_direccion2,
-        ciudad,
-        region,
-        pais,
-        codigo_postal,
-        codigo_empleado_rep_ventas,
-        limite_credito
-        ) values (
-        '$this->nombre_cliente',
-        '$this->nombre_contacto',
-        '$this->apellido_contacto',
-        '$this->telefono',
-        '$this->fax',
-        '$this->linea_direccion1',
-        '$this->linea_direccion2',
-        '$this->ciudad',
-        '$this->region',
-        '$this->pais',
-        '$this->codigo_postal',
-        $this->codigo_empleado_rep_ventas,
-        '$this->limite_credito'
-        )";
-        echo $sql;
-        echo "<br>";
+        $sql="insert into cliente (nombre_cliente,nombre_contacto,apellido_contacto,telefono,fax,linea_direccion1,linea_direccion2,ciudad,region,pais,codigo_postal,limite_credito) values ('$this->nombre_cliente','$this->nombre_contacto','$this->apellido_contacto','$this->telefono','$this->fax','$this->linea_direccion1','$this->linea_direccion2','$this->ciudad','$this->region','$this->pais','$this->codigo_postal','$this->limite_credito')";
         $this->con->executeQuery($sql);
     }
 }
+?>

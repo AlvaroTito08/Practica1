@@ -21,7 +21,7 @@ class Oficina {
         $this->telefono="";
         $this->linea_direccion1="";
         $this->linea_direccion2="";
-        $this->con= new ConexionBase();
+        $this->con= new conexionBase();
     }
 
     /**
